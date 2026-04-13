@@ -1,0 +1,12 @@
+{"id": 1, "query": "cuantos hp necesita una bomba nfpa20 para 750 gpm a 100 psi", "expected_domain": "nfpa_electrico", "expected_route": "crysl-jit", "has_numeric": true, "oracle_keywords": ["hp", "gpm", "psi", "nfpa20"]}
+{"id": 2, "query": "como constituir una empresa sociedad anonima en peru sunat ruc", "expected_domain": "legal_peru", "expected_route": "oracle-direct", "has_numeric": false, "oracle_keywords": []}
+{"id": 3, "query": "calcular caida de tension cable electrico 100 metros 50 kva", "expected_domain": "nfpa_electrico", "expected_route": "pipeline-direct", "has_numeric": true, "oracle_keywords": ["kva", "calcular", "caida de tension"]}
+{"id": 4, "query": "hazen williams formula tuberia pvc 6 pulgadas caudal 2 litros por segundo", "expected_domain": "hidraulica", "expected_route": "crysl-jit", "has_numeric": true, "oracle_keywords": ["hazen williams", "calcular"]}
+{"id": 5, "query": "que documentos necesito para una demanda laboral peru", "expected_domain": "legal_peru", "expected_route": "crystal-ctx", "has_numeric": false, "oracle_keywords": []}
+{"id": 6, "query": "como registrar una factura electronica en sunat con igv", "expected_domain": "contabilidad", "expected_route": "oracle-direct", "has_numeric": false, "oracle_keywords": []}
+{"id": 7, "query": "bernoulli equation pipe flow velocity 3 m/s diameter 200mm", "expected_domain": "hidraulica", "expected_route": "crysl-jit", "has_numeric": true, "oracle_keywords": ["bernoulli"]}
+{"id": 8, "query": "que es el igv en peru", "expected_domain": "contabilidad", "expected_route": "crystal-ctx", "has_numeric": false, "oracle_keywords": []}
+{"id": 9, "query": "nfpa 13 sprinkler system design density area method 0.15 gpm", "expected_domain": "nfpa_electrico", "expected_route": "pipeline-direct", "has_numeric": true, "oracle_keywords": ["nfpa13", "gpm"]}
+{"id": 10, "query": "hola buenas como puedo ayudarte con tu negocio", "expected_domain": "general", "expected_route": "free", "has_numeric": false, "oracle_keywords": []}
+{"id": 11, "query": "transformador 100 kva cuanto amperios da a 220v", "expected_domain": "nfpa_electrico", "expected_route": "pipeline-direct", "has_numeric": true, "oracle_keywords": ["kva", "calcular"]}
+{"id": 12, "query": "planilla empleados peru cts gratificacion vacaciones calculo", "expected_domain": "contabilidad", "expected_route": "oracle-direct", "has_numeric": false, "oracle_keywords": ["calcular"]}

@@ -1,0 +1,75 @@
+{
+  "benchmark": "Crystal Retrieval — All Domains",
+  "date": "2026-04-13",
+  "endpoint": "POST /qomni/crystal/retrieve",
+  "top_k": 3,
+  "results": [
+    {
+      "domain": "legal_peru",
+      "query": "como constituir una empresa en peru y registrarla en sunat",
+      "latency_ms": 58,
+      "matches": 3,
+      "max_score": 7,
+      "sample_match": {
+        "score": 8,
+        "instruction": "Una mediana empresa quiere contratar a plazo fijo bajo modalidad 'inicio de actividad'",
+        "output_preview": "ANÁLISIS CONTRATO MODAL — INICIO DE ACTIVIDAD\nBase legal: D.S. 003-97-TR (LPCL), Art. 57-80"
+      }
+    },
+    {
+      "domain": "contabilidad",
+      "query": "como calcular el igv y renta de una factura electronica",
+      "latency_ms": 46,
+      "matches": 3,
+      "max_score": 8
+    },
+    {
+      "domain": "hidraulica",
+      "query": "calculo de perdida de presion en tuberia con hazen williams",
+      "latency_ms": 84,
+      "matches": 3,
+      "max_score": 11,
+      "sample_match": {
+        "score": 11,
+        "instruction": "Para una instalación sanitaria: Usando la fórmula de Hazen-Williams, calcule la velocidad y pérdida de carga",
+        "output_preview": "Fórmula de Hazen-Williams (unidades SI):\n  V = 0.8492 · C · R^0.63 · S^0.54\n\nDatos: D = 150 mm..."
+      }
+    },
+    {
+      "domain": "nfpa_electrico",
+      "query": "dimensionamiento de bomba contra incendio nfpa 20",
+      "latency_ms": 31,
+      "matches": 3,
+      "max_score": 4,
+      "sample_match": {
+        "score": 4,
+        "instruction": "Calcular corriente para 3kW a 380V fp=0.9",
+        "output_preview": "Corriente nominal:\n  I = P/(V*fp) = 3000/(380*0.9) = 8.77 A\n  Cable minimo NEC (x1.25): 11.0 A"
+      }
+    },
+    {
+      "domain": "tecnico_it",
+      "query": "configurar servidor nginx con ssl en ubuntu linux",
+      "latency_ms": 43,
+      "matches": 3,
+      "max_score": 7
+    },
+    {
+      "domain": "whatsapp_ventas",
+      "query": "como gestionar pedidos y ventas por whatsapp para clientes",
+      "latency_ms": 55,
+      "matches": 3,
+      "max_score": 10
+    }
+  ],
+  "summary": {
+    "domains_tested": 6,
+    "avg_latency_ms": 52.8,
+    "min_latency_ms": 31,
+    "max_latency_ms": 84,
+    "all_domains_returned_matches": true,
+    "avg_max_score": 7.8,
+    "crystal_format": "Binary .crystal (CRYS magic header), 168 layers each",
+    "retrieval_method": "BM25-style keyword scoring over instruction-output pairs"
+  }
+}

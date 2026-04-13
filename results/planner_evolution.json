@@ -1,0 +1,75 @@
+{
+  "title": "Qomni Planner Evolution — Phase 0.55 to 0.59",
+  "phases": [
+    {
+      "phase": "0.55",
+      "name": "Binary Crystal/Free Planner",
+      "decision_model": "hard thresholds: oracle>=3 AND domain>=2 -> PIPELINE, else FREE",
+      "routes": ["PIPELINE", "ORACLE", "CRYSTAL", "FREE"],
+      "llm_bypass": false,
+      "learning": false,
+      "scoring": "keyword count only"
+    },
+    {
+      "phase": "0.56",
+      "name": "Multi-Factor Planner",
+      "decision_model": "domain_score + oracle_score + numeric_score -> route matrix",
+      "routes": ["PIPELINE", "ORACLE", "CRYSTAL", "FREE"],
+      "llm_bypass": false,
+      "learning": false,
+      "scoring": "domain_score(keyword) + oracle_score(formula intent) + numeric_score"
+    },
+    {
+      "phase": "0.57",
+      "name": "Direct Execution Engine",
+      "decision_model": "crystal score >= 3 -> direct response WITHOUT LLM",
+      "routes": ["PipelineDirect", "OracleDirect", "CrystalDirect", "CrystalCtx", "Free"],
+      "llm_bypass": true,
+      "learning": false,
+      "scoring": "previous + crystal_score from actual retrieval"
+    },
+    {
+      "phase": "0.58",
+      "name": "Cognitive Decision Engine",
+      "decision_model": "continuous confidence: pre_conf = oracle_c + domain_c + numeric_c; final_conf = pre_conf + crystal_bonus",
+      "confidence_formula": {
+        "oracle_c": "0:0.00, 1:0.10, 2:0.22, 3:0.35, 4+:0.42",
+        "domain_c": "0:0.00, 1:0.13, 2:0.28, 3:0.36, 4+:0.42",
+        "numeric_c": "(numeric_score/4.0).min(1.0) * 0.16",
+        "crystal_bonus": "score 0:0.0, 1:0.04, 2:0.07, 3+:0.10"
+      },
+      "thresholds": {
+        "pipeline_direct": ">= 0.70",
+        "oracle_or_crystal_direct": ">= 0.50",
+        "crystal_ctx_inject": ">= 0.28",
+        "free_llm": "< 0.28"
+      },
+      "features": [
+        "validate_result: NaN/empty/short detection",
+        "self-healing fallback chain: pipeline->oracle->crystal->LLM",
+        "multi-path parallel: tokio::join!(oracle_fut, crystal_fut)"
+      ],
+      "llm_bypass": true,
+      "learning": false
+    },
+    {
+      "phase": "0.59",
+      "name": "Cognitive Decision Engine + Learning Loop",
+      "decision_model": "phase 0.58 + adaptive thresholds based on observed success rates",
+      "learning": {
+        "storage": "PlannerStats (OnceLock<AtomicU64>) — zero-lock, in-memory + JSON persistence",
+        "persistence": "/opt/nexus/planner_stats.json — atomic rename every 10 queries",
+        "adaptation": {
+          "pipeline_thresh": "0.70 base, range [0.60, 0.78], lower when pipeline reliable",
+          "direct_thresh": "0.50 base, range [0.40, 0.60], lower when oracle reliable",
+          "ctx_thresh": "0.28 base, range [0.20, 0.38], raise when crystal fails"
+        },
+        "min_samples": 5,
+        "formula": "rate = success / (success + fail); adjustment = (rate - 0.5) * 0.20"
+      },
+      "endpoint": "GET /qomni/planner/stats",
+      "llm_bypass": true,
+      "learning": true
+    }
+  ]
+}

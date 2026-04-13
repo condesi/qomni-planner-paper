@@ -1,0 +1,70 @@
+{
+  "benchmark": "Qomni Planner v0.59 — Live Routing Benchmark",
+  "server": "Server5 (AMD EPYC 12-core, 48GB RAM, 500GB NVMe)",
+  "date": "2026-04-13",
+  "model_stack": "qwen2.5-1.5b-instruct-q4_k_m (local), CRYS-L JIT, Crystal Retrieval",
+  "queries": [
+    {
+      "query": "cuantos hp necesita una bomba nfpa20 para 750 gpm",
+      "route": "crysl-jit-v2.1",
+      "layer": "Phase 0.5 (CRYSL-JIT)",
+      "latency_ms": 146,
+      "llm_bypassed": true,
+      "domain": "nfpa_electrico"
+    },
+    {
+      "query": "como constituir una empresa en peru sunat ruc contrato",
+      "route": "qomni-direct-v0.59",
+      "layer": "Phase 0.59 (oracle-direct)",
+      "latency_ms": 323,
+      "llm_bypassed": true,
+      "domain": "legal_peru"
+    },
+    {
+      "query": "calcular caudal hazen williams diametro 4 pulgadas 200 metros flujo",
+      "route": "crysl-jit-v2.1",
+      "layer": "Phase 0.5 (CRYSL-JIT)",
+      "latency_ms": 151,
+      "llm_bypassed": true,
+      "domain": "hidraulica"
+    },
+    {
+      "query": "que es un transformador electrico de 50 kva voltaje",
+      "route": "crysl-jit-v2.1",
+      "layer": "Phase 0.5 (CRYSL-JIT)",
+      "latency_ms": 124,
+      "llm_bypassed": true,
+      "domain": "nfpa_electrico"
+    },
+    {
+      "query": "hola buenos dias como estas",
+      "route": "block (reflex/rate-limiter)",
+      "layer": "Phase 0.0 (Reflex)",
+      "latency_ms": 71,
+      "llm_bypassed": true,
+      "domain": "general"
+    },
+    {
+      "query": "factura electronica igv renta planilla gratificacion cts contabilidad",
+      "route": "qomni-direct-v0.59",
+      "layer": "Phase 0.59 (oracle-direct)",
+      "latency_ms": 413,
+      "llm_bypassed": true,
+      "domain": "contabilidad"
+    }
+  ],
+  "summary": {
+    "total_queries": 6,
+    "llm_bypassed_count": 6,
+    "llm_bypass_rate": "100%",
+    "avg_latency_ms": 205,
+    "min_latency_ms": 71,
+    "max_latency_ms": 413,
+    "routes_observed": {
+      "crysl-jit": 3,
+      "qomni-direct-v0.59": 2,
+      "reflex-block": 1
+    },
+    "note": "All 6 test queries bypassed the LLM entirely. Typical LLM latency on this hardware: 8000-45000ms."
+  }
+}
