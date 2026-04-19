@@ -2,13 +2,13 @@
 
 **12-module Rust AI system · 207 features · 9-layer inference cascade · Lock-free architecture**
 
-[![Live System](https://img.shields.io/badge/system-live-00e5ff)](https://qomni.clanmarketer.com/crysl/)
-[![Engine v7.4](https://img.shields.io/badge/engine-v7.4-e040fb)](https://qomni.clanmarketer.com/)
+[![Live System](https://img.shields.io/badge/system-live-00e5ff)](https://desarrollador.xyz/benchmark.html)
+[![Engine v7.4](https://img.shields.io/badge/engine-v7.4-e040fb)](https://desarrollador.xyz/benchmark.html)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
 [![arXiv](https://img.shields.io/badge/arXiv-preprint-red)](arxiv/main.tex)
 
 > **Percy Rojas Masgo** · CEO Condesi Perú · Qomni AI Lab
-> percy.rojas@condesi.pe · https://qomni.clanmarketer.com/
+> percy.rojas@condesi.pe · https://desarrollador.xyz/benchmark.html
 
 ---
 
@@ -267,7 +267,7 @@ results/
 
 ---
 
-**Live system:** https://qomni.clanmarketer.com/crysl/
+**Live system:** https://desarrollador.xyz/benchmark.html
 **CRYS-L source:** https://github.com/condesi/crysl
 **Contact:** percy.rojas@condesi.pe
 **License:** Apache-2.0

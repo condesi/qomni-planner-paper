@@ -37,7 +37,7 @@ for Deterministic Engineering Reasoning at 117M ops/s}}
     Percy Rojas Masgo \\
     CEO, Condesi Per\'u $\cdot$ Qomni AI Lab \\
     \texttt{percy.rojas@condesi.pe} \\
-    \texttt{https://qomni.clanmarketer.com/crysl/}
+    \texttt{https://desarrollador.xyz/benchmark.html}
 }
 
 \date{April 2026 \quad (Preprint)}
@@ -61,7 +61,7 @@ handles 100,000 adversarial inputs (NaN, $\pm\infty$, impossible negatives) with
 A Universal Intent Router (UIR) classifies 8 query types without LLM overhead,
 eliminating the architectural failure of meta-queries falling through to wrong engines.
 All results are live and reproducible at
-\url{https://qomni.clanmarketer.com/crysl/}.
+\Rl{https://desarrollador.xyz/benchmark.html}.
 \end{abstract}
 
 \textbf{Keywords:} deterministic AI, JIT compilation, neuro-symbolic reasoning,
@@ -447,17 +447,17 @@ All results in this paper are live API endpoints:
 
 \begin{lstlisting}[caption={Reproduce benchmark results}]
 # Throughput proof (live AVX2 measurement)
-curl https://qomni.clanmarketer.com/crysl/api/simulation/simd_density
+curl https://desarrollador.xyz/api/simulation/simd_density
 
 # Adversarial resilience (100k inputs, 0 panics)
-curl https://qomni.clanmarketer.com/crysl/api/simulation/adversarial
+curl https://desarrollador.xyz/api/simulation/adversarial
 
 # LLM comparison (1.53B× speedup)
-curl https://qomni.clanmarketer.com/crysl/api/benchmark/vs_llm
+curl https://desarrollador.xyz/api/benchmark/vs_llm
 
 # Determinism: 10 identical outputs
 for i in {1..10}; do
-  curl -s -X POST https://qomni.clanmarketer.com/crysl/api/plan/execute \
+  curl -s -X POST https://desarrollador.xyz/api/plan/execute \
     -H "Content-Type: application/json" \
     -d '{"plan":"plan_pump_sizing",
          "params":{"Q_gpm":500,"P_psi":100,"eff":0.75}}' \
@@ -489,7 +489,7 @@ The system achieves 1.53 billion$\times$ throughput advantage on deterministic t
 zero hallucination risk, and 100\% output determinism---properties that are
 architecturally impossible for autoregressive language models.
 
-\textbf{Live demo:} \url{https://qomni.clanmarketer.com/crysl/} \\
+\textbf{Live demo:} \Rl{https://desarrollador.xyz/benchmark.html} \\
 \textbf{Source:} \url{https://github.com/condesi/crysl}
 
 %─────────────────────────────────────────────────────────────────────────────
